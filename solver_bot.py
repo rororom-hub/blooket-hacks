@@ -1,6 +1,7 @@
 import asyncio
 import random
 import sys
+import cdp
 
 from playwright.async_api import Browser, Locator, Page, async_playwright
 from mine import get_page, human_click
