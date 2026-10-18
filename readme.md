@@ -10,5 +10,5 @@
 ### 2. Usage (Daily)
 p* In the opened Chrome window, start your quiz in **Solo -> Study** mode until the first question is on screen
 * Run the farmer in your terminal:
-  * `python script.py` *(clicks first answer box automatically 255 times)*
-  * Or match specific answer text: `python script.py -t "1" -n 255`
+  * `python mine.py` *(clicks first answer box automatically 255 times)*
+  * Or match specific answer text: `python mine.py -t "1" -n 255`
