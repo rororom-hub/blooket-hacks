@@ -4,10 +4,10 @@
   * `python -m venv .venv`
   * `.venv\Scripts\activate`
   * `pip install -e .`
+  * Launch Chrome in debug mode (creates an isolated profile so you only log in once): `python cdp.py`
+
 
 ### 2. Usage (Daily)
-* Launch Chrome in debug mode (creates an isolated profile so you only log in once):
-  * `python script.py --launch`
 p* In the opened Chrome window, start your quiz in **Solo -> Study** mode until the first question is on screen
 * Run the farmer in your terminal:
   * `python script.py` *(clicks first answer box automatically 255 times)*
