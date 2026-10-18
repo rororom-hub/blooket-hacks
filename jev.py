@@ -4,6 +4,17 @@ Answers are cached in jev_cache.json, keyed by the question plus its options
 (order does not matter), so the same question is only sent to the API once.
 
 Needs the TYPESAFE_API_KEY environment variable.
+
+
+USAGE:
+
+import jev
+answer = await jev.ask(question, ["Berlin", "Paris", "Rome"])   # returns "Paris"
+jev.ask is async, so it fits straight into solver_bot.py.
+
+PAGES:
+https://docs.typesafe.ai/introduction/quickstart
+https://console.typesafe.ai/rate-limits
 """
 import argparse
 import asyncio
