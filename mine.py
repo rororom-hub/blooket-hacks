@@ -24,7 +24,7 @@ async def human_click(locator: Locator) -> bool:
             timeout=600,
         )
         return True
-    except Exception:
+    except Exception as e:
         return False
 
 
@@ -90,7 +90,7 @@ async def finish_study_game(browser: Browser) -> None:
             await asyncio.sleep(random.uniform(0.2, 0.4))
             await human_click(page, next_btn)
             print("[+] Награда успешно получена!")
-        except Exception:
+        except Exception as e:
             print("[*] Экран Next не найден (возможно, открылось Daily Wheel - покрутите его в окне).")
     except Exception as e:
         print(f"[!] Не удалось автоматически завершить игру: {e}")
@@ -118,7 +118,7 @@ async def farm_study_mode(answers_count: int, answer_text: str | None) -> None:
                 answer_locator = page.locator('button[class*="_answerButton_"]').filter(has_text=answer_text).last
 
                 if await answer_locator.is_visible(timeout=800):
-                    clicked = await human_click(page, answer_locator)
+                    clicked = await human_click(answer_locator)
                     if clicked:
                         completed += 1
                         await asyncio.sleep(random.uniform(0.16, 0.24))
@@ -143,7 +143,7 @@ async def farm_study_mode(answers_count: int, answer_text: str | None) -> None:
             except KeyboardInterrupt:
                 print("\n[!] Остановлено пользователем.")
                 break
-            except Exception:
+            except Exception as e:
                 await asyncio.sleep(0.2)
 
         if completed >= answers_count:
